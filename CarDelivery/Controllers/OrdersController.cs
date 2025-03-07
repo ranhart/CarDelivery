@@ -61,7 +61,7 @@ namespace CarDelivery.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Orderid,Userid,Carid,Quantity")] Orders orders)
         {
-            if (true)
+            if (ModelState.IsValid)
             {
                 _context.Add(orders);
                 await _context.SaveChangesAsync();
@@ -102,7 +102,7 @@ namespace CarDelivery.Controllers
                 return NotFound();
             }
 
-            if (true)
+            if (ModelState.IsValid)
             {
                 try
                 {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -20,6 +21,7 @@ public partial class Cars
 
     [ForeignKey("Complectationid")]
     [NotMapped]
+    [ValidateNever]
     public virtual Complectations Complectations { get; set; }
 
     public ICollection<Orders> Orders { get; set; } = new List<Orders>();

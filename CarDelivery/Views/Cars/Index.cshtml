@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<CarDelivery.Models.Cars>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Cars";
 }
 
-<h1>Index</h1>
+<h1>Cars</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -12,6 +12,9 @@
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Carid)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Make)
             </th>
@@ -31,6 +34,9 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.Carid)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Make)
             </td>
             <td>
@@ -40,7 +46,7 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Complectations.Complectationid)
+                @Html.DisplayFor(modelItem => item.Complectations.Name)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Carid">Edit</a> |
